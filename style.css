@@ -3,11 +3,11 @@ body {
 	   and use the OS’s UI font as the website font
 	 */
   font: 100%/1.5 system-ui;
-  /* max-width: 100ch;
+  max-width: 100ch;
   margin-inline: auto;
-  padding-inline: 1rem */
+  padding-inline: 1rem
 }
-/* 
+
 :root {
   --color-accent: oklch(55.194% 0.05069 169.126);
   accent-color: var(--color-accent);
@@ -88,4 +88,56 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
-} */
+}
+
+/* Section headings with an accent underline */
+section h2 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.2em;
+  margin-top: 1.5em;
+}
+
+/* Each entry as a card with an accent edge */
+section article {
+  border-left: 0.3em solid var(--color-accent);
+  padding-left: 1em;
+  margin-block: 1em;
+}
+
+section article h3 {
+  margin: 0;
+}
+
+section article p {
+  margin: 0.25em 0;
+}
+
+/* De-emphasize dates */
+time {
+  color: oklch(50% 3% 200);
+  font-size: 90%;
+}
+
+/* Skills as inline pills */
+section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+section li {
+  background: oklch(from var(--color-accent) 95% 5% h);
+  border-radius: 0.5em;
+  padding: 0.25em 0.75em;
+}
+
+/* Links in content (not the nav) */
+section a {
+  color: var(--color-accent);
+}
+
+section a:hover {
+  text-decoration-thickness: 0.2em;
+}
