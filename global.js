@@ -114,22 +114,19 @@ function resolvePath(path) {
 }
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  // Bail out if there's nowhere to render
   if (!(containerElement instanceof Element)) {
     console.error('renderProjects: containerElement is not a valid DOM element');
     return;
   }
- 
-  // Only allow real heading tags (h1–h6); fall back to h2 otherwise
+
   if (!/^h[1-6]$/i.test(headingLevel)) {
     console.warn(`renderProjects: "${headingLevel}" is not a heading tag, using h2`);
     headingLevel = 'h2';
   }
- 
-  // Clear the container so re-renders don't duplicate projects
+
   containerElement.innerHTML = '';
  
-  // Placeholder when there's nothing to show (or the fetch failed)
+
   if (!Array.isArray(projects) || projects.length === 0) {
     containerElement.innerHTML = '<p>No projects to show yet.</p>';
     return;
@@ -148,7 +145,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       <p>${description}</p>
     `;
  
-    // Optional: if a project has a url, make the whole card a link
     article.innerHTML = project.url
       ? `<a href="${resolvePath(project.url)}" class="project-link">${content}</a>`
       : content;
