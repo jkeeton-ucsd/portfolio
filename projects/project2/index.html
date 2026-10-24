@@ -183,60 +183,35 @@
         <figure>
           <img src="page1_viz1_decoupling_real_lines.png"
                alt="Four small-multiple line charts for the United Kingdom, Sweden, Denmark and Germany, 1990 to 2018. In each, GDP per person (gold) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
-          <figcaption>Panel A. GDP and CO<sub>2</sub> per person, indexed to 1990, for four high-income countries. In each, the economy grew while per-person emissions fell.</figcaption>
+          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) emission levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <strong>Four hand-picked exemplars, indexed to 1990.</strong>
-            Panel A shows only the UK, Sweden, Denmark and Germany, the textbook decoupling success stories, rather
-            than a random or complete sample. Indexing both series to 1990 = 100 puts dollars and tonnes on one
-            axis so the "scissors" shape is readable at a glance, which is a legitimate technique. But 1990 is also
-            a flattering baseline: it falls just before East German heavy industry collapsed after reunification and
-            just before the UK's switch from coal to gas, so part of the drop has little to do with policy-driven
-            decoupling. I considered a full small-multiples grid of every rich country, but the mixed picture blunted
-            the message, so I kept the four strongest cases and let Panel B answer the "cherry-picking" objection.
+            <span class="score dec">−1</span>
+            <strong>Hand-picked countries with 1990 as a reference point.</strong>
+            The visualization hand picks four countries that exhibit success stories in recent history. The index on the 
+            left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the scissor
+            effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
+            It is worth noting that the choice of countries and reference year is a form of cherry-picking, 
+            which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
+            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these four countries are representative 
+            of all rich countries, when in fact they are not.
           </li>
           <li>
+            <span class="score dec">−1</span>
             <strong>Truncated y-axis, shaded gap, and direct end-labels.</strong>
-            The y-axis runs from 30 to 160 rather than from 0, which stretches the vertical distance between the
-            lines so the fall in emissions dominates each panel. Truncation is common for indexed series, so it
-            doesn't read as a trick, and the dashed line at 100 keeps the baseline honest. The green fill between
-            the two lines turns the gap into a visible "dividend," and the end-labels ("GDP/person +X%",
-            "CO<sub>2</sub>/person −Y%") hand the reader the takeaway without making them read the axis. The
-            labels are accurate; the axis range is the persuasive lever.
+            The y-axis runs from 30 to 160 rather than from 0 which exaggerates the visual difference. The gap is shaded to 
+            emphasize the difference between the two lines even further. Labels are placed directly on the end of the lines with 
+            percentage changes rather than absolute values, which emphasizes relative change over time.
           </li>
           <li>
-            <strong>"It's not just four countries": a second panel with a hand-chosen start year.</strong>
-            Panel B pre-empts the obvious objection to Panel A by showing all high-income countries at once, which
-            looks like the opposite of cherry-picking. However, the comparison window starts in 2005, chosen
-            because most rich-country emission declines begin around then; starting in 1990 (to match Panel A)
-            would put more countries above zero. So the panel defends against one kind of selection while quietly
-            relying on another. The title ("It's Not Just Four Countries…") and the warm, calm cream-and-green
-            palette, together with the headline "Prosperity Without Pollution," frame the whole visualization as
-            good news rather than as an open question.
-          </li>
-          <li>
-            <strong>Counting every emission decline as a win.</strong>
-            Every country whose CO<sub>2</sub> per person fell is coloured green, and the title's count ("N of M
-            Rich Nations Now Emit Less Per Person") includes all of them, including countries whose GDP per person
-            also fell over 2005–2018. Those are cases of recession, not decoupling. The title's wording is literally
-            true, but sitting under a decoupling headline it invites the reader to read the count as "N countries
-            decoupled." The shaded "Richer and Cleaner" zone covers only the lower-right quadrant, so a careful
-            reader can spot green dots outside it, but at a glance the green mass reads as one success story.
-            Similarly, the x-axis is capped at +100%; the one country beyond the cap is disclosed in the footnote
-            rather than plotted, which tidies the layout but removes a point from view.
-          </li>
-          <li>
-            <strong>Territorial, per-person CO<sub>2</sub> as the emissions measure.</strong>
-            Both panels use territorial emissions (emissions produced inside a country's borders) per person. This
-            is the standard World Bank measure, and the footnote names it. But it ignores emissions embodied in
-            imports. Rich countries have moved manufacturing to places like China, so consumption-based
-            emissions fall much less than territorial ones. Using per-person figures also hides population growth
-            (the UK and Sweden both grew). Disclosing "territorial" in small grey type is earnest on paper,
-            but few readers know what it implies, so the effect is closer to omission.
+            <span class="score dec">0</span>
+            <strong>Lighter colors</strong>
+            The plots use lighter colors for the background, lines, and axes to try and make the chart feel more friendly and less serious.
+            This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
           </li>
         </ul>
       </section>
@@ -247,58 +222,35 @@
         <figure>
           <img src="page2_viz1_decoupling_myth_scatter.png"
                alt="Dark-background log-log scatter of all countries in 2018, GDP per person against CO2 per person, with bubble size showing total emissions. Countries above 30,000 dollars per person are red and cluster in the upper right; a dashed trend line rises from lower left to upper right. The United States, China, India, Qatar and Sweden are labelled.">
-          <figcaption>Panel A. GDP per person vs. CO<sub>2</sub> per person for every country, 2018 (log–log). Bubble area reflects total emissions; countries above $30,000 per person are in red. The dashed line is a least-squares fit on the log scale.</figcaption>
+          <figcaption>GDP per person vs. CO<sub>2</sub> per person for every country, 2018. Bubble area reflects total emissions; countries above $30,000 per person are in red. The dashed line is a least-squares fit on the log scale.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <strong>Answering a time question with a snapshot.</strong>
-            Decoupling is a claim about change over time within countries, yet Panel A is a single-year,
-            cross-country comparison. It shows, accurately, that richer countries emit more per person in 2018, but
-            that says nothing about whether any individual country is bending its curve. The title "The Richer We
-            Get, the More We Burn" completes the swap: "get richer" implies a process over time that the chart does
-            not show. This was the most effective choice on the AGAINST side, because the correlation is strong and
-            visually obvious, and the title never states anything a reader could check against the chart and find
-            false.
+            <span class="score dec">−1.5</span>
+            <strong>Answering a time question with a static snapshot.</strong>
+            Separation of emissions and GDP could be interpreted as a change over time within countries, but our chart is a
+            cross-country comparison. It shows that richer countries emit more per person in 2018, but
+            ignores any temporal dynamics within countries. The reason for this is to use the point in time correlation
+            as it is easy to interpret and to avoid the complexity of showing a time series for every country.
           </li>
           <li>
-            <strong>Log–log axes, a fitted trend line, and honest labels.</strong>
-            Income and emissions both span several orders of magnitude, so log scales are the right encoding, and
-            both axes say "log scale." The least-squares line, fit on log values, summarises the relationship
-            transparently. I labelled the United States, China, India and Qatar for context, but also Sweden, a
-            rich country with relatively low emissions. Including a counterexample makes the chart feel balanced,
-            which in turn makes it more persuasive; one labelled exception reads as "the exception that proves the
-            rule."
+            <span class="score ear">+1</span>
+            <strong>Log–log axes and a fitted trend line.</strong>
+            Income and emissions both span several orders of magnitude, so log scales are the right encoding, but it
+            is still worth noting that the log axes compress the spread of the data to make the pattern look more law-like.
+            The trend line is fitted to the log–log data, which is a reasonable choice, but it is not the same as fitting a line to the raw data. 
           </li>
           <li>
-            <strong>Alarm palette, an arbitrary $30k cut-off, and bubble size without a legend.</strong>
-            The dark background with red highlights signals danger before the reader reads a word. "Rich" is
-            defined by a $30,000 GDP-per-person threshold that I chose because it neatly separates a red cluster in
-            the upper right; the World Bank definition is used on the other panel, so the two sides of the
-            visualization quietly use different definitions of "rich." Bubble area is scaled to total emissions
-            with a square-root transform, so areas are proportional, but there is no size legend, so the large red
-            discs (the US above all) register as "a lot" without being readable as a quantity.
-          </li>
-          <li>
-            <strong>Totals instead of per person, and 1960 as the comparison point.</strong>
-            Panel B switches to total emissions, which grow with population, while the FOR side's per-person figures
-            do not. The title ("Rich Countries Still Burn Twice the Carbon They Did in 1960") compares against
-            1960 rather than against the late-2000s peak, which is the comparison decoupling advocates actually
-            make. The annotations mark 1960 and 1990 but not the peak, so the decline after it is never named. In
-            addition, the group is defined by today's income classification, so it includes countries that were
-            not rich in 1960 and whose emissions grew as they industrialised. That arguably supports the
-            proposition's critics honestly, but it also inflates the historical growth.
-          </li>
-          <li>
-            <strong>A zero-based axis and a complete-series filter, used for persuasive effect.</strong>
-            Starting the y-axis at zero is the textbook-earnest choice, and I restricted the sum to countries with
-            a complete 1960–2018 record (count disclosed in the footnote) so countries entering the data partway
-            through do not create fake jumps. Both choices are defensible and stated. But I chose them knowing their
-            effect: with the axis at zero and headroom set to 1.25× the maximum, the post-2007 decline in totals
-            looks like a small wobble rather than a trend. This is the clearest case where a conventionally
-            "honest" technique did persuasive work, which is why I scored it only mildly positive.
+            <span class="score dec">−0.5</span>
+            <strong>Fearful colors, an arbitrary $30k cut-off, and bubble size without a legend.</strong>
+            The dark background with red highlights signals danger without needing to read the text. "Rich" is
+            defined by a $30,000 GDP-per-person threshold that is chosen to make the red cluster
+            of countries look distinct from the rest of the data (which could be considered deceptive). 
+            Bubble size is used to show total emissions, but the legend is omitted so the 
+            reader cannot interpret the scale of the bubbles.
           </li>
         </ul>
       </section>
@@ -307,38 +259,30 @@
         <h2>Final Reflection</h2>
 
         <p>
-          What surprised me most was how little I needed to distort the data. Every number in all four charts is
-          accurately computed from the World Bank data, and none of the axes are mislabelled. The persuasion came
-          almost entirely from choices made before anything was drawn: which countries to include, which start year
-          to use, whether to measure emissions per person or in total, territorially or by consumption, and whether
-          to ask "how do rich and poor countries compare?" or "how have rich countries changed?". The FOR side was
-          easier to build because a real and well-documented trend exists for a subset of countries, and my job
-          was mainly to frame that subset as the whole story. The AGAINST side was harder; the most honest version
-          of the argument depends on consumption-based emissions, which this dataset does not contain. So I had to
-          change the question, using a cross-sectional snapshot and total emissions, and that is where my most
-          deceptive choices ended up.
+          What surprised me most was how little I needed to manipulate the data to make a persuasive argument. While
+          I did make some transformations to strengthen the story I wanted to tell, the data itself was already 
+          persuasive of both perspectives. I believe the implication is that two opposing arguments can organically 
+          arise from the same dataset, and that the ethical burden of a designer is to consider the truthfulness of 
+          the argument they are making, not just the techniques they use to make it. And along those lines, it is very 
+          easy for designers to accidentally mislead their audience, even when they are trying to be honest.
         </p>
 
         <p>
-          The second surprise was that earnest techniques did a lot of the persuasive work. Panel B on the FOR side
-          looks like a response to the cherry-picking critique because it shows every rich country, and Panel B on
-          the AGAINST side uses a zero-based axis precisely because it makes a real decline look negligible. Clear
-          footnotes ("territorial emissions," "high-income countries with complete data") made both sides feel
-          more trustworthy while disclosing things most readers are not equipped to interpret. Disclosure that the
-          audience cannot use is technically transparent but does not stop them from being misled, so I no longer
-          think "I put it in the footnote" settles the ethical question.
+          The true difficulty of this assignment was finding ways to make the two visualizations simple and acceptable for the audience.
+          Finding the blurry line between persuasive and misleading was a challenge, and I found myself questioning if 
+          the choices I made were ethical or not. Especially for the "for" visualization, I struggle to discern if limiting the data
+          to 1990 and picking the four countries was a fair exhibition of progress or a misleading cherry-pick. I also struggled with the "against" visualization, 
+          as I wanted to show how the most recent data shows that richer countries clearly emit more per capita, but it ignores 
+          progress over time. So I found myself in a position where I was trying to make the two persuasive visualizations as fair and honest as possible, 
+          but I was still left with a nagging feeling that I was misleading the audience in some way.
         </p>
 
         <p>
-          I now think of ethical visualization less as a property of individual techniques and more as a
-          relationship between the chart and the question it claims to answer. A truncated axis, a chosen start
-          year, or a per-person measure can each be the right choice; they become misleading when they are chosen
-          because of the answer they produce rather than because they fit the question, and when a reasonable
-          reader would reach a different conclusion if the alternative were shown. The bound I would draw is
-          therefore counterfactual: a persuasive choice is acceptable if the designer would be comfortable showing
-          the reader the obvious alternative (the 1990 start year, the full country list, the consumption-based
-          series) next to it, and misleading if the argument only survives as long as the alternative stays hidden.
-          By that test, several of my choices on both sides fail, and I tried to score them accordingly.
+          I don't truly have a solution to this problem other than to avoid the clearly misleading techniques (manipulating data directly, 
+          or using misleading visual encodings), and to try to be as honest as possible with the data I have. If
+          a claim for the data is inherently vague (such as separating growth from emissions), then I think it is the responsibility of the designer 
+          to make that clear to the audience, and to show both sides of the data if possible. I'd define a choice as misleading 
+          when the conclusion would change if the reader saw the obvious alternative (another start year, all countries) and the designer hid that alternative.
         </p>
       </section>
     </main>
