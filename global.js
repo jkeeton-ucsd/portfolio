@@ -24,23 +24,19 @@ for (let p of pages) {
   let url = p.url;
   let title = p.title;
 
-  // Prefix relative URLs with the base path
   if (!url.startsWith('http')) {
     url = BASE_PATH + url;
   }
 
-  // Step 3.2: create the link as an element so we can configure it
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
   nav.append(a);
 
-  // Highlight the current page
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
 
-  // Open external links in a new tab
   if (a.host !== location.host) {
     a.target = '_blank';
   }
@@ -66,19 +62,15 @@ function setColorScheme(colorScheme) {
   select.value = colorScheme;
 }
 
-// Step 4.5: restore the saved preference on page load
 if ('colorScheme' in localStorage) {
   setColorScheme(localStorage.colorScheme);
 }
 
-// Step 4.4: react to changes and save the choice
 select.addEventListener('input', function (event) {
   setColorScheme(event.target.value);
   localStorage.colorScheme = event.target.value;
 });
 
-
-// Step 5: better contact form
 let form = document.querySelector('form');
 
 form?.addEventListener('submit', function (event) {
@@ -94,3 +86,74 @@ form?.addEventListener('submit', function (event) {
   let url = form.action + '?' + params.join('&');
   location.href = url;
 });
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    console.log(response);
+ 
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+ 
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
+
+function resolvePath(path) {
+  if (!path || /^(https?:)?\/\//.test(path) || path.startsWith('/')) return path;
+  return BASE_PATH + path;
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // Bail out if there's nowhere to render
+  if (!(containerElement instanceof Element)) {
+    console.error('renderProjects: containerElement is not a valid DOM element');
+    return;
+  }
+ 
+  // Only allow real heading tags (h1–h6); fall back to h2 otherwise
+  if (!/^h[1-6]$/i.test(headingLevel)) {
+    console.warn(`renderProjects: "${headingLevel}" is not a heading tag, using h2`);
+    headingLevel = 'h2';
+  }
+ 
+  // Clear the container so re-renders don't duplicate projects
+  containerElement.innerHTML = '';
+ 
+  // Placeholder when there's nothing to show (or the fetch failed)
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects to show yet.</p>';
+    return;
+  }
+ 
+  for (let project of projects) {
+    const article = document.createElement('article');
+ 
+    const title = project.title ?? 'Untitled project';
+    const image = resolvePath(project.image ?? 'https://vis-society.github.io/labs/2/images/empty.svg');
+    const description = project.description ?? '';
+ 
+    const content = `
+      <${headingLevel}>${title}</${headingLevel}>
+      <img src="${image}" alt="${title}">
+      <p>${description}</p>
+    `;
+ 
+    // Optional: if a project has a url, make the whole card a link
+    article.innerHTML = project.url
+      ? `<a href="${resolvePath(project.url)}" class="project-link">${content}</a>`
+      : content;
+ 
+    containerElement.appendChild(article);
+  }
+}
+
