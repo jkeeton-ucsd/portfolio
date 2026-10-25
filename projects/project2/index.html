@@ -181,8 +181,8 @@
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="page1_viz1_decoupling_real_lines.png"
-               alt="Four small-multiple line charts for the United Kingdom, Sweden, Denmark and Germany, 1990 to 2018. In each, GDP per person (gold) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
+          <img src="page1_trajectories.png"
+               alt="Connected line plot of GDP and CO2 per person, indexed to 1990 (=100) emission levels, for a mix of high-income countries. In each country the economy grew while per-capita emissions fell.">
           <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) emission levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
         </figure>
 
@@ -192,8 +192,8 @@
           <li>
             <span class="score dec">−1</span>
             <strong>Hand-picked countries with 1990 as a reference point.</strong>
-            The visualization hand picks four countries that exhibit success stories in recent history. The index on the 
-            left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the scissor
+            The visualization hand picks countries that exhibit success stories in recent history. The index on the 
+            left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the 
             effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
             It is worth noting that the choice of countries and reference year is a form of cherry-picking, 
             which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
@@ -202,15 +202,17 @@
           </li>
           <li>
             <span class="score dec">−1</span>
-            <strong>Truncated y-axis, shaded gap, and direct end-labels.</strong>
-            The y-axis runs from 30 to 160 rather than from 0 which exaggerates the visual difference. The gap is shaded to 
-            emphasize the difference between the two lines even further. Labels are placed directly on the end of the lines with 
-            percentage changes rather than absolute values, which emphasizes relative change over time.
+            <strong>Clipped axes, messy trend lines, and 3-year rolling averages.</strong>
+            The x-axis and y-axis are both clipped to the range of the data, which makes the lines look more dramatic than they would if the axes were extended to 0. 
+            The trend lines are also messy, with some lines crossing over each other or even moving backwards (due to GDP falling or growing).
+            The lines are also smoothed with a 3-year rolling average, which is a reasonable choice to reduce noise, but it also makes the lines less smooth than they would be if the raw data were plotted.
+            These two choices are likely to be misleading, as they exaggerate the effect of rising GDP and falling emissions. They also make it difficult to 
+            compare the countries, as the lines are not smooth and the axes are not consistent.
           </li>
           <li>
             <span class="score dec">-0.5</span>
             <strong>Lighter colors</strong>
-            The plots use lighter colors for the background, lines, and axes to try and make the chart feel more friendly and less serious.
+            The plots use lighter colors for the background, playful colors for the lines, and axes to try and make the chart feel more friendly and less serious.
             This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
           </li>
         </ul>
@@ -220,9 +222,9 @@
         <h3>AGAINST the Proposition</h3>
 
         <figure>
-          <img src="page2_viz1_decoupling_myth_scatter.png"
-               alt="Dark-background log-log scatter of all countries in 2018, GDP per person against CO2 per person, with bubble size showing total emissions. Countries above 30,000 dollars per person are red and cluster in the upper right; a dashed trend line rises from lower left to upper right. The United States, China, India, Qatar and Sweden are labelled.">
-          <figcaption>GDP per person vs. CO<sub>2</sub> per person for every country, 2018. Bubble area reflects total emissions; countries above $30,000 per person are in red. The dashed line is a least-squares fit on the log scale.</figcaption>
+          <img src="page2_income_ladder.png"
+               alt="Dark-background bar chart of median CO2 emissions per person in 2018 for ten equal-size groups of countries ordered by GDP per person.">
+           <figcaption>Median CO<sub>2</sub> per person in 2018, with every country grouped into ten equal-size bands by GDP per person. Each step up the income ladder brings higher emissions.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
@@ -232,25 +234,23 @@
             <span class="score dec">−1.5</span>
             <strong>Answering a time question with a static snapshot.</strong>
             Separation of emissions and GDP could be interpreted as a change over time within countries, but our chart is a
-            cross-country comparison. It shows that richer countries emit more per person in 2018, but
-            ignores any temporal dynamics within countries. The reason for this is to use the point in time correlation
+            cross-country comparison for a single year. It shows that richer countries emit more per person in 2018, but
+            ignores any temporal dynamics within countries. The reason for this is to use the point in time relationship
             as it is easy to interpret and to avoid the complexity of showing a time series for every country.
           </li>
           <li>
-            <span class="score ear">+1</span>
-            <strong>Log–log axes and a fitted trend line.</strong>
-            Income and emissions both span several orders of magnitude, so log scales are the right encoding, but it
-            is still worth noting that the log axes compress the spread of the data to make the pattern look more law-like.
-            The trend line is fitted to the log–log data, which is a reasonable choice, but it is not the same as fitting a line to the raw data. 
+            <span class="score ear">-0.5</span>
+            <strong>Grouping countries by income and showing the median.</strong>
+            Instead of plotting each country, I split all countries into ten equal-size groups by GDP per person and show each
+            group's median emissions. This is a clean visual that is easy to read. But it
+            also hides the variation inside each group as low emitting countries like those in the other visual are
+            grouped with high emitting countries. 
           </li>
           <li>
-            <span class="score dec">−0.5</span>
-            <strong>Fearful colors, an arbitrary $30k cut-off, and bubble size without a legend.</strong>
-            The dark background with red highlights signals danger without needing to read the text. "Rich" is
-            defined by a $30,000 GDP-per-person threshold that is chosen to make the red cluster
-            of countries look distinct from the rest of the data (which could be considered deceptive). 
-            Bubble size is used to show total emissions, but the legend is omitted so the 
-            reader cannot interpret the scale of the bubbles.
+            <span class="score dec">+0.5</span>
+            <strong>Linear axis starting at zero.</strong>
+            The y-axis is linear and starts at zero, which is the conventional, honest choice for a bar chart. This is an earnest
+            design choice that doesn't omit any data and allows the reader to see the true magnitude of the differences between groups.
           </li>
         </ul>
       </section>
