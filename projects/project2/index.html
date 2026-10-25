@@ -181,49 +181,37 @@
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="page1_trajectories.png"
-               alt="Connected line plot of GDP and CO2 per person, indexed to 1990 (=100) levels, for a mix of high-income countries. In each country the economy grew while per-capita emissions fell.">
-          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) levels, for high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
+          <img src="page1_viz1_decoupling_real_lines.png"
+               alt="Four small-multiple line charts for the United Kingdom, Sweden, Denmark and Germany, 1990 to 2018. In each, GDP per person (gold) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
+          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) emission levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <span class="score dec">-1</span>
+            <span class="score dec">−1</span>
             <strong>Hand-picked countries with 1990 as a reference point.</strong>
-            The visualization hand picks countries that exhibit success stories in recent history, and notably are labeled high-income by the World Bank. The index on the 
-            left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the 
+            The visualization hand picks four countries that exhibit success stories in recent history. The index on the 
+            left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the scissor
             effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
             It is worth noting that the choice of countries and reference year is a form of cherry-picking, 
             which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
-            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these countries are representative 
+            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these four countries are representative 
             of all rich countries, when in fact they are not.
-            Alternatives considered: I considered and rejected a random sample because the mixed results blurred the message, and a later start year because 1990 has a policy justification (Kyoto).
           </li>
           <li>
-            <span class="score dec">-1</span>
-            <strong>Clipped axes, messy trend lines, and 3-year rolling averages.</strong>
-            The x-axis and y-axis are both clipped to the range of the data, which makes the lines look more dramatic than they would if the axes were extended to 0. 
-            The trend lines are also messy, with some lines crossing over each other or even moving backwards (in years when GDP fell or emissions rose).
-            The lines are also smoothed with a 3-year rolling average, which is a reasonable choice to reduce noise, but it also makes the lines smoother than they would be if the raw data were plotted.
-            These choices are likely to be misleading, as they exaggerate the effect of rising GDP and falling emissions.
-            Alternatives considered: I considered and rejected axes extended to zero as it collapsed the paths together and made the chart hard to read. Additionally, I
-            rejected showing the raw data because it was too noisy and distracted from the overall trend.
-          </li>
-          <li>
-            <span class="score dec">-1</span>
-            <strong>Title framing</strong>
-            The title says "Rich Countries" even though only hand-picked countries are shown, which invites the reader to generalize. 
-            The axis labels and the shaded quadrant tell the reader how to interpret the chart before they look at the numbers, and the arrowheads reinforce the idea that this trend will continue.
-            Alternatives considered: I rejected a more neutral title because it would not have been as persuasive.
+            <span class="score dec">−1</span>
+            <strong>Truncated y-axis, shaded gap, and direct end-labels.</strong>
+            The y-axis runs from 30 to 160 rather than from 0 which exaggerates the visual difference. The gap is shaded to 
+            emphasize the difference between the two lines even further. Labels are placed directly on the end of the lines with 
+            percentage changes rather than absolute values, which emphasizes relative change over time.
           </li>
           <li>
             <span class="score dec">-0.5</span>
             <strong>Lighter colors</strong>
-            The background is a light cream and the lines use blues and greens from the viridis palette, an established, colorblind-safe colormap, so the chart feels hopeful rather than alarming.
+            The plots use lighter colors for the background, lines, and axes to try and make the chart feel more friendly and less serious.
             This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
-            Alternatives considered: I considered and rejected a variety of color palettes because Viridis is a well-established, colorblind-safe palette.
           </li>
         </ul>
       </section>
@@ -232,48 +220,37 @@
         <h3>AGAINST the Proposition</h3>
 
         <figure>
-          <img src="page2_income_ladder.png"
-               alt="Light-background bar chart of median CO2 emissions per person in 2018 for ten equal-size groups of countries ordered by GDP per person.">
-           <figcaption>Median CO<sub>2</sub> per person in 2018, with every country grouped into ten equal-size bands by GDP per person. Emissions rise with almost every step up the GDP bins.</figcaption>
+          <img src="page2_viz1_decoupling_myth_scatter.png"
+               alt="Dark-background log-log scatter of all countries in 2018, GDP per person against CO2 per person, with bubble size showing total emissions. Countries above 30,000 dollars per person are red and cluster in the upper right; a dashed trend line rises from lower left to upper right. The United States, China, India, Qatar and Sweden are labelled.">
+          <figcaption>GDP per person vs. CO<sub>2</sub> per person for every country, 2018. Bubble area reflects total emissions; countries above $30,000 per person are in red. The dashed line is a least-squares fit on the log scale.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <span class="score dec">-1.5</span>
+            <span class="score dec">−1.5</span>
             <strong>Answering a time question with a static snapshot.</strong>
             Separation of emissions and GDP could be interpreted as a change over time within countries, but our chart is a
-            cross-country comparison for a single year. It shows that richer countries emit more per person in 2018, but
-            ignores any temporal dynamics within countries. The reason for this is to use the point in time relationship
+            cross-country comparison. It shows that richer countries emit more per person in 2018, but
+            ignores any temporal dynamics within countries. The reason for this is to use the point in time correlation
             as it is easy to interpret and to avoid the complexity of showing a time series for every country.
-            Alternatives considered: I rejected showing a time series for every country because it would have been too complex or
-            shown countries that didn't fit this narrative (like those showcased in the "for" visualization).
-          </li>
-          <li>
-            <span class="score dec">-0.5</span>
-            <strong>Grouping countries by income and showing the median.</strong>
-            Instead of plotting each country, I split all countries into ten equal-size groups by GDP per person and show each
-            group's median emissions. This is a clean visual that is easy to read. But it
-            also hides the variation inside each group as low emitting countries, like Sweden, are
-            grouped with high emitting countries. 
-            Alternatives considered: I rejected plotting each country, or showing the range of emissions
-             within each group as it would have added even more ink to the chart and made it harder to read.
-          </li>
-          <li>
-            <span class="score dec">-1</span>
-            <strong>Grey to red gradient and title</strong>
-            The bars shift from grey to red as income rises, tying wealth to danger visually before the reader reads any text. 
-            The annotation tells the reader what to think, and the title "Higher GDP Countries Emit More" frames this as a direct consequence of wealth.
-            Both are accurate, but they invite the reader to treat getting richer as the cause rather than possibly just a correlation.
-            Alternatives considered: I rejected a more neutral color palette because it would not have been as persuasive.
           </li>
           <li>
             <span class="score ear">+1</span>
-            <strong>Linear axis starting at zero.</strong>
-            The y-axis is linear and starts at zero, which is the conventional, honest choice for a bar chart. This is an earnest
-            design choice that doesn't omit any data and allows the reader to see the true magnitude of the differences between groups.
-            Alternatives considered: I rejected a log scale as it would've shown the same data but weakened the visual contrast.
+            <strong>Log–log axes and a fitted trend line.</strong>
+            Income and emissions both span several orders of magnitude, so log scales are the right encoding, but it
+            is still worth noting that the log axes compress the spread of the data to make the pattern look more law-like.
+            The trend line is fitted to the log–log data, which is a reasonable choice, but it is not the same as fitting a line to the raw data. 
+          </li>
+          <li>
+            <span class="score dec">−0.5</span>
+            <strong>Fearful colors, an arbitrary $30k cut-off, and bubble size without a legend.</strong>
+            The dark background with red highlights signals danger without needing to read the text. "Rich" is
+            defined by a $30,000 GDP-per-person threshold that is chosen to make the red cluster
+            of countries look distinct from the rest of the data (which could be considered deceptive). 
+            Bubble size is used to show total emissions, but the legend is omitted so the 
+            reader cannot interpret the scale of the bubbles.
           </li>
         </ul>
       </section>
@@ -282,9 +259,9 @@
         <h2>Final Reflection</h2>
 
         <p>
-          What surprised me most was that I never altered a single value in the data, yet I could make a persuasive argument for two very different perspectives.
-          While I did make some design choices to strengthen the story I wanted to tell, the data itself was already 
-          persuasive of both perspectives based on the framing of the data. I believe the implication is that two opposing arguments can organically 
+          What surprised me most was how little I needed to manipulate the data to make a persuasive argument. While
+          I did make some transformations to strengthen the story I wanted to tell, the data itself was already 
+          persuasive of both perspectives. I believe the implication is that two opposing arguments can organically 
           arise from the same dataset, and that the ethical burden of a designer is to consider the truthfulness of 
           the argument they are making, not just the techniques they use to make it. And along those lines, it is very 
           easy for designers to accidentally mislead their audience, even when they are trying to be honest.
@@ -294,7 +271,7 @@
           The true difficulty of this assignment was finding ways to make the two visualizations simple and acceptable for the audience.
           Finding the blurry line between persuasive and misleading was a challenge, and I found myself questioning if 
           the choices I made were ethical or not. Especially for the "for" visualization, I struggle to discern if limiting the data
-          to 1990 and picking the countries I did was a fair exhibition of progress or a misleading cherry-pick. I also struggled with the "against" visualization, 
+          to 1990 and picking the four countries was a fair exhibition of progress or a misleading cherry-pick. I also struggled with the "against" visualization, 
           as I wanted to show how the most recent data shows that richer countries clearly emit more per capita, but it ignores 
           progress over time. So I found myself in a position where I was trying to make the two persuasive visualizations as fair and honest as possible, 
           but I was still left with a nagging feeling that I was misleading the audience in some way.
