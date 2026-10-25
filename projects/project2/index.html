@@ -182,7 +182,7 @@
 
         <figure>
           <img src="page1_viz1_decoupling_real_lines.png"
-               alt="Four small-multiple line charts for the United Kingdom, Sweden, Denmark and Germany, 1990 to 2018. In each, GDP per person (gold) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
+               alt="Four small-multiple line charts for the United Kingdom, Sweden, United States and Germany, 1990 to 2018. In each, GDP per person (blue) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
           <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
         </figure>
 
@@ -195,13 +195,13 @@
             The visualization hand picks four countries that exhibit success stories in recent history. The index on the 
             left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the scissor
             effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
-            It is worth noting that the choice of countries and reference year is a form of cherry-picking, 
-            which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
-            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these four countries are representative 
-            of all rich countries, when in fact they are not.
+            This is cherry-picking but not of a trend that doesn't exist; 24 of the 41 high-income countries with data grew GDP per person while cutting CO<sub>2</sub>
+            per person, so the direction shown is true for a majority. What the selection exaggerates is the size of the effect.
+            These four cut per-person emissions by 21-44%, while the median rich country cut them by only 10%. A reader leaves with 
+            the right direction but an inflated sense of how far most countries have come.
 
-            Alternatives considered: I rejected a random sample of rich countries because the mixed results blurred the message,
-            and a later start year because 1990 has a policy justification (Kyoto) that makes it look principled.
+            Alternatives considered: I rejected plotting every rich country because it was too cluttered to read. I rejected other start years because they were less persuasive, and
+            1990 has a policy justification (Kyoto).
           </li>
           <li>
             <span class="score dec">−1</span>
@@ -210,16 +210,25 @@
             emphasize the difference between the two lines even further. Labels are placed directly on the end of the lines with 
             percentage changes rather than absolute values, which emphasizes relative change over time.
 
-            Alternatives considered: I rejected an axis starting at zero because it flattened both lines and made the divergence look modest,
+            Alternatives considered: I rejected an axis starting at zero because it flattened both lines and made the divergence look smaller,
             and I rejected plotting raw GDP and CO<sub>2</sub> values because dollars and tonnes can't share an axis, which would hide the "scissor" shape.
           </li>
           <li>
             <span class="score dec">−0.5</span>
             <strong>Lighter colors</strong>
-            The plots use lighter colors for the background, lines, and axes to try and make the chart feel more friendly and less serious.
-            This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
+            The plots use a light background, with a viridis blue for GDP and a viridis green for emissions. Viridis is an established, 
+            colorblind-safe palette so the chart feels hopeful rather than alarming.
+            This makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
 
             Alternatives considered: I rejected a red or grey line for emissions because it framed the CO<sub>2</sub> line as a threat rather than a success.
+          </li>
+          <li>
+            <span class="score dec">−1</span>
+            <strong>Title framing</strong>
+            The title says "Many Rich Nations" even though only four hand-picked countries are shown, which invites the reader to
+            generalize. The bold end-labels then hand the reader the takeaway before they examine the charts.
+            Alternatives considered: I rejected a neutral title such as "GDP and Emissions in Four Countries, 1990–2018"
+            because it would not have been as persuasive.
           </li>
         </ul>
       </section>
