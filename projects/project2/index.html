@@ -182,37 +182,42 @@
 
         <figure>
           <img src="page1_trajectories.png"
-               alt="Connected line plot of GDP and CO2 per person, indexed to 1990 (=100) emission levels, for a mix of high-income countries. In each country the economy grew while per-capita emissions fell.">
-          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) emission levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
+               alt="Connected line plot of GDP and CO2 per person, indexed to 1990 (=100) levels, for a mix of high-income countries. In each country the economy grew while per-capita emissions fell.">
+          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) levels, for high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <span class="score dec">−1</span>
+            <span class="score dec">-1</span>
             <strong>Hand-picked countries with 1990 as a reference point.</strong>
-            The visualization hand picks countries that exhibit success stories in recent history. The index on the 
+            The visualization hand picks countries that exhibit success stories in recent history, and notably are labeled high-income by the World Bank. The index on the 
             left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the 
             effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
             It is worth noting that the choice of countries and reference year is a form of cherry-picking, 
             which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
-            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these four countries are representative 
+            Here I believe it is likely a deceptive choice, as the audience may be led to believe that these countries are representative 
             of all rich countries, when in fact they are not.
           </li>
           <li>
-            <span class="score dec">−1</span>
+            <span class="score dec">-1</span>
             <strong>Clipped axes, messy trend lines, and 3-year rolling averages.</strong>
             The x-axis and y-axis are both clipped to the range of the data, which makes the lines look more dramatic than they would if the axes were extended to 0. 
             The trend lines are also messy, with some lines crossing over each other or even moving backwards (due to GDP falling or growing).
-            The lines are also smoothed with a 3-year rolling average, which is a reasonable choice to reduce noise, but it also makes the lines less smooth than they would be if the raw data were plotted.
-            These two choices are likely to be misleading, as they exaggerate the effect of rising GDP and falling emissions. They also make it difficult to 
-            compare the countries, as the lines are not smooth and the axes are not consistent.
+            The lines are also smoothed with a 3-year rolling average, which is a reasonable choice to reduce noise, but it also makes the lines smoother than they would be if the raw data were plotted.
+            These choices are likely to be misleading, as they exaggerate the effect of rising GDP and falling emissions.
+          </li>
+          <li>
+            <span class="score dec">-0.5</span>
+            <strong>Title framing</strong>
+            The title says "Many Rich Countries" even though only six hand-picked countries are shown, which invites the reader to generalize. 
+            The axis labels and the shaded quadrant tell the reader how to interpret the chart before they look at the numbers, and the arrows pointing reinforces the idea that this trend will continue.
           </li>
           <li>
             <span class="score dec">-0.5</span>
             <strong>Lighter colors</strong>
-            The plots use lighter colors for the background, playful colors for the lines, and axes to try and make the chart feel more friendly and less serious.
+            The background is a light cream and the lines use blues and greens from the viridis palette, an established, colorblind-safe colormap, so the chart feels hopeful rather than alarming.
             This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
           </li>
         </ul>
@@ -223,7 +228,7 @@
 
         <figure>
           <img src="page2_income_ladder.png"
-               alt="Dark-background bar chart of median CO2 emissions per person in 2018 for ten equal-size groups of countries ordered by GDP per person.">
+               alt="Light-background bar chart of median CO2 emissions per person in 2018 for ten equal-size groups of countries ordered by GDP per person.">
            <figcaption>Median CO<sub>2</sub> per person in 2018, with every country grouped into ten equal-size bands by GDP per person. Each step up the income ladder brings higher emissions.</figcaption>
         </figure>
 
@@ -231,7 +236,7 @@
 
         <ul>
           <li>
-            <span class="score dec">−1.5</span>
+            <span class="score dec">-1.5</span>
             <strong>Answering a time question with a static snapshot.</strong>
             Separation of emissions and GDP could be interpreted as a change over time within countries, but our chart is a
             cross-country comparison for a single year. It shows that richer countries emit more per person in 2018, but
@@ -239,15 +244,22 @@
             as it is easy to interpret and to avoid the complexity of showing a time series for every country.
           </li>
           <li>
-            <span class="score ear">-0.5</span>
+            <span class="score dec">-0.5</span>
             <strong>Grouping countries by income and showing the median.</strong>
             Instead of plotting each country, I split all countries into ten equal-size groups by GDP per person and show each
             group's median emissions. This is a clean visual that is easy to read. But it
-            also hides the variation inside each group as low emitting countries like those in the other visual are
+            also hides the variation inside each group as low emitting countries, like Sweden, are
             grouped with high emitting countries. 
           </li>
           <li>
-            <span class="score dec">+0.5</span>
+            <span class="score dec">-1</span>
+            <strong>Grey to red gradient and title</strong>
+            The bars shift from grey to red as income rises, tying wealth to danger visually before the reader reads any text. 
+            The annotation tells the reader what to think, and the title "Higher GDP Countries Emit More" frames this as a direct consequence of wealth.
+            Both are accurate, but they invite the reader to treat getting richer as the cause rather than possible a correlation.
+          </li>
+          <li>
+            <span class="score ear">+1</span>
             <strong>Linear axis starting at zero.</strong>
             The y-axis is linear and starts at zero, which is the conventional, honest choice for a bar chart. This is an earnest
             design choice that doesn't omit any data and allows the reader to see the true magnitude of the differences between groups.
