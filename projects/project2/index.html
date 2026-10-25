@@ -182,23 +182,22 @@
 
         <figure>
           <img src="page1_viz1_decoupling_real_lines.png"
-               alt="Four small-multiple line charts for the United Kingdom, Sweden, United States and Germany, 1990 to 2018. In each, GDP per person (blue) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
-          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) levels, for four high-income countries. In each country the economy grew while per-capita emissions fell.</figcaption>
+               alt="Four small-multiple line charts for the United Kingdom, Australia, United States and Netherlands, 1990 to 2018. In each, GDP per person (blue) rises above an index of 100 while CO2 per person (green) falls below it, with the gap between them shaded green.">
+          <figcaption>GDP and CO<sub>2</sub> per person, indexed to 1990 (=100) levels, for four high-income countries. In each country the economy grew while per-capita emissions fell or flattened.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
           <li>
-            <span class="score dec">−1</span>
-            <strong>Hand-picked countries with 1990 as a reference point.</strong>
+            <span class="score dec">−0.5</span>
+            <strong>Hand-picked countries representing different regions with 1990 as a reference point.</strong>
             The visualization hand picks four countries that exhibit success stories in recent history. The index on the 
             left axis is set to 100 in 1990, for both carbon and dollars, so that the reader can quickly see the scissor
             effect of rising GDP and falling emissions. The choice of 1990 is not arbitrary, as it is the baseline year used by the Kyoto Protocol.
-            This is cherry-picking but not of a trend that doesn't exist; 24 of the 41 high-income countries with data grew GDP per person while cutting CO<sub>2</sub>
-            per person, so the direction shown is true for a majority. What the selection exaggerates is the size of the effect.
-            These four cut per-person emissions by 21-44%, while the median rich country cut them by only 10%. A reader leaves with 
-            the right direction but an inflated sense of how far most countries have come.
+            This is cherry-picking but not of a trend that doesn't exist; 24 of the 41 high-income countries with data grew GDP per person while cutting CO<sub>2</sub> per person, 
+            and the median change in emissions was -10%. I deliberately chose a range rather than only the best cases, so the sample sits closer to the typical rich country. 
+            It is still a hand-picked sample of four, and the reader may generalize incorrectly.
 
             Alternatives considered: I rejected plotting every rich country because it was too cluttered to read. I rejected other start years because they were less persuasive, and
             1990 has a policy justification (Kyoto).
@@ -223,10 +222,9 @@
             Alternatives considered: I rejected a red or grey line for emissions because it framed the CO<sub>2</sub> line as a threat rather than a success.
           </li>
           <li>
-            <span class="score dec">−1</span>
+            <span class="score dec">−0.5</span>
             <strong>Title framing</strong>
-            The title says "Many Rich Nations" even though only four hand-picked countries are shown, which invites the reader to
-            generalize. The bold end-labels then hand the reader the takeaway before they examine the charts.
+            The title hedges with "flattening" so that it stays accurate for Australia, but it still generalizes from four hand-picked countries to "many rich nations."
             Alternatives considered: I rejected a neutral title such as "GDP and Emissions in Four Countries, 1990–2018"
             because it would not have been as persuasive.
           </li>
@@ -253,7 +251,7 @@
             ignores any temporal dynamics within countries. The reason for this is to use the point in time correlation
             as it is easy to interpret and to avoid the complexity of showing a time series for every country.
           
-            Alternatives considered: I rejected a time series because it would have been too cluttered to read, and 
+            Alternatives considered: I rejected a time series because it would have shown some countries improving which would weaken the argument, and 
             I rejected a single-country time series because it would not have been as persuasive of the argument.
           </li>
           <li>
