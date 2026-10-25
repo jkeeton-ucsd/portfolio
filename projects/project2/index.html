@@ -199,6 +199,7 @@
             which could either be an honest exhibition of countries that represent proof of progress or a misleading selection of data.
             Here I believe it is likely a deceptive choice, as the audience may be led to believe that these countries are representative 
             of all rich countries, when in fact they are not.
+            Alternatives considered: random sample of countries, additional hand-picked countries, different start year.
           </li>
           <li>
             <span class="score dec">-1</span>
@@ -207,18 +208,21 @@
             The trend lines are also messy, with some lines crossing over each other or even moving backwards (in years when GDP fell or emissions rose).
             The lines are also smoothed with a 3-year rolling average, which is a reasonable choice to reduce noise, but it also makes the lines smoother than they would be if the raw data were plotted.
             These choices are likely to be misleading, as they exaggerate the effect of rising GDP and falling emissions.
+            Alternatives considered: extended axes, raw data plotting, different smoothing techniques.
           </li>
           <li>
             <span class="score dec">-1</span>
             <strong>Title framing</strong>
-            The title says "Rich Countries" even though only six hand-picked countries are shown, which invites the reader to generalize. 
+            The title says "Rich Countries" even though only hand-picked countries are shown, which invites the reader to generalize. 
             The axis labels and the shaded quadrant tell the reader how to interpret the chart before they look at the numbers, and the arrowheads reinforce the idea that this trend will continue.
+            Alternatives considered: more neutral title, no quadrant shading, no arrowheads.
           </li>
           <li>
             <span class="score dec">-0.5</span>
             <strong>Lighter colors</strong>
             The background is a light cream and the lines use blues and greens from the viridis palette, an established, colorblind-safe colormap, so the chart feels hopeful rather than alarming.
             This is a subtle choice, but it makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
+            Alternatives considered: variety of color palettes, including more reds and oranges.
           </li>
         </ul>
       </section>
@@ -242,6 +246,7 @@
             cross-country comparison for a single year. It shows that richer countries emit more per person in 2018, but
             ignores any temporal dynamics within countries. The reason for this is to use the point in time relationship
             as it is easy to interpret and to avoid the complexity of showing a time series for every country.
+            Alternatives considered: time series for selected countries or animation over time.
           </li>
           <li>
             <span class="score dec">-0.5</span>
@@ -250,6 +255,7 @@
             group's median emissions. This is a clean visual that is easy to read. But it
             also hides the variation inside each group as low emitting countries, like Sweden, are
             grouped with high emitting countries. 
+            Alternatives considered: plotting each country, showing the mean instead of the median, showing the range of emissions within each group.
           </li>
           <li>
             <span class="score dec">-1</span>
@@ -257,12 +263,14 @@
             The bars shift from grey to red as income rises, tying wealth to danger visually before the reader reads any text. 
             The annotation tells the reader what to think, and the title "Higher GDP Countries Emit More" frames this as a direct consequence of wealth.
             Both are accurate, but they invite the reader to treat getting richer as the cause rather than possibly just a correlation.
+            Alternatives considered: more neutral color palette, more neutral title.
           </li>
           <li>
             <span class="score ear">+1</span>
             <strong>Linear axis starting at zero.</strong>
             The y-axis is linear and starts at zero, which is the conventional, honest choice for a bar chart. This is an earnest
             design choice that doesn't omit any data and allows the reader to see the true magnitude of the differences between groups.
+            Alternatives considered: logarithmic axis, starting the axis at a higher value.
           </li>
         </ul>
       </section>
