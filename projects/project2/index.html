@@ -214,7 +214,9 @@
           </li>
           <li>
             <span class="score dec">0</span>
-            <strong>Color choices</strong>
+            <strong>Color and chart type choices</strong>
+            For trending over time, a line plot felt the most relevant with GDP and Carbon Emissions indexes sharing the same y-axis and time on the x-axis.
+            The axes and marks are earnest as they are the cleanest way to show the trending over time.
             The plots use a light background, with a viridis blue for GDP and a viridis green for emissions. Viridis is an established, 
             colorblind-safe palette so the chart feels hopeful rather than alarming.
             This makes the chart feel more persuasive of the hopeful proposition that emissions and GDP can be separated.
@@ -260,6 +262,7 @@
             Income and emissions both span several orders of magnitude, so log scales are the right encoding, but it
             is still worth noting that the log axes compress the spread of the data to make the pattern look more law-like.
             The trend line is fitted to the log–log data, which is a reasonable choice, but it is not the same as fitting a line to the raw data. 
+            The marks are dots which is the best choice for showing the relationship between GDP and carbon emissions.
             Alternatives considered: I rejected linear axes because almost every country collapsed into the bottom-left corner,
             making the chart unreadable.
           </li>
@@ -277,7 +280,7 @@
           </li>
           <li>
             <span class="score dec">−0.5</span>
-            <strong>Title framing and labelled countries.</strong>
+            <strong>Title framing and labeled countries.</strong>
             The title is accurate for 2018, but it frames a single-year snapshot as a lasting rule rather than a temporary observation. 
             Labelling the United States, Qatar and China draws the eye to the largest emitters.
             Alternatives considered: I rejected a neutral title such as "GDP and CO<sub>2</sub> per Person, 2018"
