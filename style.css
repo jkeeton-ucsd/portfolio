@@ -94,6 +94,74 @@ form button {
   max-width: 100%;
 }
 
+.project-year {
+  margin: 0;
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+  color: oklch(50% 3% 200);
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
+  path {
+    transition: 300ms;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  --color: oklch(45% 50% 310) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid oklch(50% 10% 200 / 40%);
+  list-style: none;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.searchBar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  margin-block-end: 1em;
+}
+
 h1 {
   font-size: 400%;
 }
