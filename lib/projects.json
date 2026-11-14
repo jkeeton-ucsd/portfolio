@@ -1,5 +1,12 @@
 [
     {
+        "title": "Bikewatching: Boston Bike Traffic by Time of Day",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "https://jkeeton-ucsd.github.io/bikewatching/",
+        "description": "An interactive Mapbox + D3 map of ~260,000 Bluebikes trips from March 2024. Circle size shows station traffic, color shows whether a station sees more departures or arrivals, and a time slider reveals how flows shift over the day."
+    },
+    {
         "title": "Persuasive or Deceptive? Have Rich Countries Separated Growth from Emissions?",
         "year": "2026",
         "image": "projects/project2/page1_viz1_decoupling_real_lines.png",
